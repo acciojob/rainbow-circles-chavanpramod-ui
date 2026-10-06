@@ -1,1 +1,62 @@
-/*  your css code here. If applicable */
+/* Base centering for outer divs */
+#outer, #middle, #inner,
+#outer::before, #middle::before, #inner::before {
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+/* 1. Outer Circle: 300px x 300px, Red */
+#outer {
+  width: 300px;
+  height: 300px;
+  background-color: #ff0000;
+  position: relative;
+}
+
+/* 2. Pseudo Circle 1: 250px x 250px, Orange */
+#outer::before {
+  content: "";
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background-color: #ffa500;
+}
+
+/* 3. Middle Circle: 200px x 200px, Yellow */
+#middle {
+  width: 200px;
+  height: 200px;
+  background-color: #ffff00;
+  position: relative;
+  z-index: 1;
+}
+
+/* 4. Pseudo Circle 2: 150px x 150px, Green */
+#middle::before {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background-color: #008000;
+}
+
+/* 5. Inner Circle: 100px x 100px, Blue */
+#inner {
+  width: 100px;
+  height: 100px;
+  background-color: #0000ff;
+  position: relative;
+  z-index: 2;
+}
+
+/* 6. Innermost Pseudo Circle: 50px x 50px, Purple */
+#inner::before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: #800080;
+}
